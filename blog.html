@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>播客详情</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="./static/css/typo.css">
     <link rel="stylesheet" href="./static/css/blog.css">
+    <link rel="stylesheet" href="./static/css/animate.css">
+    <link rel="stylesheet" href="./static/lib/prism/prism.css">
 </head>
 
 <body>
@@ -34,7 +37,7 @@
     </nav>
 
     <!-- 中间内容 -->
-    <div class="m-container-small m-padded-tb-big">
+    <div class="m-container-small m-padded-tb-big animated fadeIn">
         <div class="ui container">
             <div class="ui top attached segment">
                 <div class="ui horizontal link list">
@@ -62,146 +65,416 @@
                 <h2 class="ui center aligned header">
                     这是标题
                 </h2>
-                <div id="content" class="m-padded-lr-responsive">
-                    <div align="center" class="only-phone">
-                    </div>
-                    <br>
-                    <script type="text/javascript">
-                        post_title_text("/manager/2020/03/15/01");
-                    </script>
-                    <div class="alert alert-danger" role="alert"><b>版权声明</b>：本文是开源实验室原创文章，如您转载必须以链接形式注明原文地址：<a
-                            href="https://kymjs.com/manager/2020/03/15/01" class="alert-link"
-                            target="_blank">https://kymjs.com/manager/2020/03/15/01</a></div>
-                    <div id="myAffix" class="hidden-xs">
-                        用一句话概括，本文讲的就是：怎样通过自己的专业深度，帮助公司和团队预测未来。<br>很多时候，之所以能够做到预测未来，无非是你掌握的信息比别人要多而已。<br><br>
-                    </div>
-                    <b>对本文有任何问题，可加我的个人微信询问：kymjs123</b><br><br>
+                <div id="content" class="typo typo-selection m-padded-tb-large m-padded-lr-responsive">
+                    <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 
-                    <p>大概两个多月前的一次，跟朋友聊天，谈到了一些当 leader
-                        的心路和历程，他说正好我很久没更新博客的，让我写下来，分享一波，我当时没放在心上，心想这种管理上的事情，各有各的方法，本身没有对和错，只有合适不合适，何况都是一些不成片的经历而已，适合互动交流，但很难提炼成文章。
-                    </p>
+                    <ol id="table" class="ui table">
+                        <li><a href="#section1">关于 <i class="serif">Typo.css</i></a></li>
+                        <li><a href="#section2">排版实例</a>
+                            <ul>
+                                <li><a href="#section2-1">例1：论语学而篇第一</a></li>
+                                <li><a href="#section2-2">例2：英文排版</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section3">附录</a>
+                            <ul>
+                                <li><a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a></li>
+                                <li><a href="#appendix2">开源许可</a></li>
+                            </ul>
+                        </li>
+                    </ol>
 
-                    <p>无独有偶，今年过年因为疫情在家，跟一个年前离职的同事聊天，他之前在我团队是个很不错的研发，现在也是在一个一线公司带小团队。他当时问了我同样的事情，让我讲了讲带团队的成长经验。 </p>
+                    <h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
+                    <pre><code>p { color : red }</code></pre>
+                    <p><i class="serif">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>
+                    <h4>现状和如何去做：</h4>
 
-                    <p>我突然意识到，这些过往的经验如果稍微做一下抽象和总结，多少能给人一些启发。虽然我从很早开始做 Android
-                        开发，真正带自己的团队也只是从两年前加入一条开始的。得益于职业生涯前几年的努力，自己技术累积了良好的口碑，恰好也是公司快速发展的需要，其实我相信，几乎全部的初当 leader
-                        的同学一样，我们应该都算是 "码而优则仕"，又恰巧碰到一个机会，就这样走上了这条路。这两年，我们团队从5个人到20个人，学到的感受到的很大程度上可以总结为一些做事方法，其中主要的就是三点预判。
-                    </p>
+                    <p class="typo-first">排版是一个麻烦的问题 <sup><a href="#appendix1">#
+                                附录一</a></sup>，需要精心设计，而这个设计却是常被视觉设计师所忽略的。前端工程师更常看到这样的问题，但不便变更。因为在多个 OS
+                        中的不同浏览器渲染不同，改动需要多的时间做回归测试，所以改变变得更困难。而像我们一般使用的
+                        Yahoo、Eric Meyer 和 Alice base.css 中采用的 Reset 都没有很好地考虑中文排版。<i class="serif">Typo.css</i>
+                        要做的就是解决中文排版的问题。</p>
 
-                    <h2>预测业务</h2>
-
-                    <p>从技术研发初做 Leader，最大的变化就是工作内容的改变。以前需要重心放在代码上，思考怎样解决问题、了解实现原理，而现在变成了解业务，思考业务，预测业务。<br>
-                        这个过程是个非常痛苦的过程，甚至有点算一种悖论。不知道大家有没有发现，在最初我们做研发的时候，要去了解各种各样的框架，学习内部实现原理，再尝试自己去写一个类似的框架，再从这个过程中了解这项技术的本质。这其中最神奇的就是，大家都觉得做业务写需求是一件很傻的事，而做架构，搞技术预研则是一件很高大上的事，所以很多人觉得公司的架构组、基础组的人都很厉害，相对的垂直业务组的人则技术比较差。<br>
-                        但是作为 Leader 往往是需要对公司的业务和组织架构有着深入的理解，并且能够通过产品经理提出的需求，对应的猜到这项需求上线后会对将来的业务干系方产生怎样的影响。<br>
-                        所以这两类人在很多公司都是被分割开的，比如阿里的P职级跟M职级，虽然有对应的转换，但大部分都是P职级做技术，M职级做管理。 </p>
-
-
-                    <p>举个我之前经历过的例子，我们是电商公司，APP 的首页对布局的灵活性要求非常高，上面这张图就是我们 APP 的首页。<br>
-                        公司有一套 CMS 系统，就是专门应对这样的场景的。核心技术就是后端返回一个 JSON，前端根据 JSON 展示对应的布局和内容，这其实是行业很通用的做法了，天猫之前开源过一个叫
-                        Tangram
-                        的解决方案，就是应对这种动态化首页的场景的。但是这种界面，如果是纯展示后端返回的数据还好，只要稍微插入一些特殊逻辑，代码马上会变得混乱不堪。最好的办法是客户端在请求接口的时候就将用户信息都传过去，然后服务端根据业务对应返回。但现实中往往是做不到的，要么是后端需要的参数非常非常多，要么是数据由不同的系统传出，可能同时涉及到VIP信息、订单、位置、推荐、广告等等。所以就变成了服务端返回一个占位符、客户端再根据占位符请求对应的子接口。<br>
-                        这种问题的解决就有两大思路，第一种技术层面的：就是通过良好的客户端架构设计，去充分考虑各种组件的情况，预留好应对方法。<br>
-                        第二种则是业务层面的：既然接口涉及到很多信息，那么能不能这些信息由一个专门去负责数据整合的中间层完成。<br>
-                        相比较而言，第一种改动点更小，只需要在自己工程代码中完成就可以了，第二种办法则需要充分了解公司的业务划分以及产品已定义的组件和将来可能的组件，找到相关的后端，再拉一个人或一个团队专门负责做接口整合的中间层，这时候第二种方案就对
-                        Leader 的做事能力有着极大的挑战了。 </p>
-
-                    <h2>预测行业</h2>
-
-                    <p><strong>移动端开发没人要了</strong>。这种话作为段子我们不知道听到多少次了，事实上，每个公司都需要移动端的开发，只不过要求在不断变化而已。比如五年前，那时候创业的黄金时间，我们要的是能把业务快速做好上线的人；三年前，行业头部基本稳定，我们要的是能够把快速迭代那几年所欠下技术债还上的人；近几年，裁员不断，我们要的是能把公司成本降到最低，收益提到最高的人。理解了这一点，如何提高自己的价值，很简单，你能做公司需要而别人做不到的事，再帮助你的团队理解这一点，你就是公司最有价值的人。<br>
-                        比方说做 Android 的，近几年没有什么新技术，Kotlin、Flutter，没了。你要学吗？不一定！思考一下学完了以后对自己对公司有没有帮助，这才是重点。<br>
-                        想起来这样一个段子，说公司各种员工对老板的看法</p>
-
-                    <table>
+                    <p><strong><i class="serif">Typo.css</i> 测试于如下平台：</strong></p>
+                    <table class="ui table" summary="Typo.css 的测试平台列表">
                         <thead>
                             <tr>
-                                <th>员工</th>
-                                <th>看法</th>
+                                <th>OS/浏览器</th>
+                                <th>Firefox</th>
+                                <th>Chrome</th>
+                                <th>Safari</th>
+                                <th>Opera</th>
+                                <th>IE9</th>
+                                <th>IE8</th>
+                                <th>IE7</th>
+                                <th>IE6</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>普通员工</td>
-                                <td>老板傻逼，什么都不懂</td>
+                                <td>OS X</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
                             </tr>
                             <tr>
-                                <td>基层管理</td>
-                                <td>老板有时候还是懂点的</td>
+                                <td>Win 7</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>-</td>
                             </tr>
                             <tr>
-                                <td>高管</td>
-                                <td>老板说的太对了，我怎么没想到</td>
+                                <td>Win XP</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>-</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>✔</td>
                             </tr>
                             <tr>
-                                <td>老板</td>
-                                <td>我他妈太傻逼了，怎么没想到他这样</td>
+                                <td>Ubuntu</td>
+                                <td>✔</td>
+                                <td>✔</td>
+                                <td>-</td>
+                                <td>✔</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <p>又是一年春天，招聘跳槽的黄金季节。没事多看看，了解一下现在其他公司的招聘要求，工作内容，细心一点你就能看出当前行业缺少的技术是什么；多跟你的上级聊一聊，打听一下公司的下一步大的战略方向是什么，你就又能提前准备一些事情。<br>
-                        很多时候，之所以能够做到预测未来，无非是你掌握的信息比别人要多而已。 </p>
+                    <h4>中文排版的重点和难点</h4>
 
-                    <h2>预测团队和项目</h2>
+                    <p>在中文排版中，HTML4 的很多标准在语义在都有照顾到。但从视觉效果上，却很难利用单独的 CSS 来实现，像<abbr title="在文字下多加一个点">着重号</abbr>（例：这里<em
+                            class="typo-em">强调一下</em>）。在 HTML4 中，专名号标签（<code>&lt;u&gt;</code>）已经被放弃，而
+                        HTML5 被<a href="http://html5doctor.com/u-element/">重新提起</a>。<i class="serif">Typo.css</i>
+                        也根据实际情况提供相应的方案。我们重要要注意的两点是：</p>
+                    <ol>
+                        <li>语义：语义对应的用法和样式是否与中文排版一致</li>
+                        <li>表现：在各浏览器中的字体、大小和缩放是否如排版预期</li>
+                    </ol>
+                    <p>对于这些，<i class="serif">Typo.css</i> 排版项目的中文偏重注意点，都添加在附录中，详见：</p>
+                    <blockquote>
+                        <b>附录一</b>：<a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a>
+                    </blockquote>
 
-                    <p>如何找到自己团队或者项目的不足？<br>
-                        其中一个方法是直接问你的用户。就像我在文章开头时候提到的那个 CMS 系统的例子，如果你不是切实去做 CMS 系统的人，你根本不可能知道完成一个 CMS 组件有多复杂。<br>
-                        预测团队是个很有意思的事情。他的有意思在于你很容易先入为主，去猜测某些可能会发生的事情，然后某个机缘巧合，这件事情发生了，会让你觉得，其实你早就知道这件事会发生了。比如你想知道自己团队的不足，你去找团队的人聊天，大概率会得到的答案是那个你心中已经有的答案。而这背后，并不仅仅是大家的想法都一样，事实上更多的是因为你很容易只听到那些你想听到的事。
-                        所以得出的结论经常是前端说的后端技术太差，返回的东西乱七八糟，有用的数据没有，没用的数据一堆；后端说前端水平太差，几个字段自己拼一下就能知道数据了，什么都让我返回，这个逻辑我没法写。<br>
-                        之前在沪江的时候，我们 team 里有一句话叫：<strong>当一个事情发生第一次的时候，他就有可能发生第二次，当他发生了第二次的时候，就一定会发生第三次。</strong><br>
-                        像这种推脱，很难直接去解决，因为前端没发理解后端的难点，后端也不知道前端的复杂。但一个常常被忽略的重点是，他们至少能表达出自己觉得差的地方。当多个人都觉得某个东西很差的时候，那可能真的是他有问题了，需要考虑如何解决掉这个问题或者避免下次继续发生。
+                    <p>目前已有像百姓网等全面使用 <i class="serif">Typo.css</i> 的项目，测试平台的覆盖，特别是在<abbr
+                            title="手机、平板电脑等移动平台">移动端</abbr>上还没有覆盖完主流平台，希望有能力的同学能加入测试行列，或者加入到 <i
+                            class="serif">Typo.css</i>
+                        的开发。加入方法：<a href="https://github.com/sofish/Typo.css">参与 <i class="serif">Typo.css</i>
+                            开发</a>。如有批评、建议和意见，也随时欢迎给在 Github 直接提 <a
+                            href="https://github.com/sofish/Typo.css/issues">issues</a>，或给<abbr
+                            title="Sofish Lin, author of Typo.css" role="author">我</abbr>发<a
+                            href="mailto:sofish@icloud.com">邮件</a>。</p>
+
+
+                    <h2 id="section2">二、排版实例：</h2>
+
+                    <p>提供2个排版实例，第一个中文实例来自于来自于<cite
+                            class="typo-unique">张燕婴</cite>的《论语》，由于古文排版涉及到的元素比较多，所以采用《论语》中《学而》的第一篇作为排版实例介绍；第2个来自到经典的
+                        Lorem Ipsum，并加入了一些代码和列表等比较具有代表性的排版元素。</p>
+
+                    <h3 id="section2-1">例1：论语学而篇第一</h3>
+
+                    <p>
+                        <small><b>作者：</b><abbr title="名丘，字仲尼">孔子</abbr>（
+                            <time>前551年9月28日－前479年4月11日</time>
+                            ）
+                        </small>
                     </p>
 
-                    <h2>team 的成长，才是 Leader 的绩效</h2>
+                    <h4>本篇引语</h4>
 
-                    <p>之前看过一部电视剧，叫《大江大河》。讲的是文化大革命刚结束的时候，男主是个大学生被分配到国企化工厂上班，因为能力出众，当上了小组长，带两个厂子弟一起做事。<br>
-                        当时他就跟上级说了一句话：他们两个做事效率实在太低，与其让他们两个人去做，还不如我一个人直接做完了。<br>
-                        我相信这是很多人刚当上 leader 的第一感受，我当时也是这样，很多事情还不如自己加个班去解决掉，也比交给别人拖两三天才完成要好。<br>
-                        但事实上这样的后果就是：现在你只带两个人，有些事可以帮他们完成，将来将一个厂的人都交给你的时候，你要如何去帮他们完成呢？ </p>
+                    <p>
+                        《学而》是《论语》第一篇的篇名。《论语》中各篇一般都是以第一章的前二三个字作为该篇的篇名。《学而》一篇包括16章，内容涉及诸多方面。其中重点是「吾日三省吾身」；「节用而爱人，使民以时」；「礼之用，和为贵」以及仁、孝、信等道德范畴。
+                    </p>
 
-                    <p>我们 CTO 每次都说 Leader 要懂得将自己的能力复制给组员。让 Leader 的能力变得可复制，这才是公司最大的财富。<br>
-                        而懂得将预测未来的能力交给组员，这才是提升的最快办法，比很多傻逼公司强制996要好太多倍了。<br>
-                        当然，懂得跟上级形成定期的汇报机制，小事用钉钉微信，重要决策或进展当面或者日报。掌握足够的信息才是预测未来的重要依据，同时也是向上管理的必要条件，这也是我们CTO教我的。 </p>
+                    <h4>原文</h4>
 
-                    <p>你看，我们CTO自己也需要向上管理。 </p>
+                    <p>子曰：「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知，而不愠，不亦君子乎？」 </p>
 
-                    <br>
+                    <h4>译文</h4>
 
-                    <div class="alert alert-warning" role="alert">
-                        了解更多有深度技术的文章，与移动端、大前端未来方向的认知，<a href="https://xiaozhuanlan.com/kotlinlang" class="alert-link"
-                            target="_blank">前往订阅</a> 开源实验室小专栏。
-                    </div>
-                    <br>
-                    <div class="only-phone" align="center">
-                        <script type="text/javascript">
-                            post_bottom_image();
-                        </script>
-                    </div>
-                    <!-- 标签 -->
-                    <div class="ui basic teal left pointing label m-padded-lr-responsive">
-                        方法论
-                    </div>
-                    <!-- 赞赏 -->
-                    <div class="ui center aligned basic segment">
-                        <button id="payButton" class="ui orange basic circular button">
-                            赞赏
-                        </button>
-                    </div>
-                    <div class="ui payQR flowing popup transition hidden">
-                        <div class="ui orange basic label">
-                            <div class="ui images" style="font-size: inherit !important;">
-                                <div class="image">
-                                    <img src="./static/images/wechat.jpg" alt="" class="ui rounded borded image"
-                                        width="120px">
-                                    <div>支付宝</div>
-                                </div>
-                                <div class="image">
-                                    <img src="./static/images/wechat.jpg" alt="" class="ui rounded borded image"
-                                        width="120px">
-                                    <div>微信</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p>孔子说：「学了又时常温习和练习，不是很愉快吗？有志同道合的人从远方来，不是很令人高兴的吗？人家不了解我，我也不怨恨、恼怒，不也是一个有德的君子吗？」 </p>
+
+                    <h4>评析</h4>
+
+                    <p>宋代著名学者<u
+                            class="typo-u">朱熹</u>对此章评价极高，说它是「入道之门，积德之基」。本章这三句话是人们非常熟悉的。历来的解释都是：学了以后，又时常温习和练习，不也高兴吗等等。三句话，一句一个意思，前后句子也没有什么连贯性。但也有人认为这样解释不符合原义，指出这里的「学」不是指学习，而是指学说或主张；「时」不能解为时常，而是时代或社会的意思，「习」不是温习，而是使用，引申为采用。而且，这三句话不是孤立的，而是前后相互连贯的。这三句的意思是：自己的学说，要是被社会采用了，那就太高兴了；退一步说，要是没有被社会所采用，可是很多朋友赞同<abbr
+                            title="张燕婴">我</abbr>的学说，纷纷到我这里来讨论问题，我也感到快乐；再退一步说，即使社会不采用，人们也不理解我，我也不怨恨，这样做，不也就是君子吗？（见《齐鲁学刊》1986年第6期文）这种解释可以自圆其说，而且也有一定的道理，供读者在理解本章内容时参考。
+                    </p>
+
+                    <p>此外，在对「人不知，而不愠」一句的解释中，也有人认为，「人不知」的后面没有宾语，人家不知道什么呢？当时因为孔子有说话的特定环境，他不需要说出知道什么，别人就可以理解了，却给后人留下一个谜。有人说，这一句是接上一句说的，从远方来的朋友向我求教，我告诉他，他还不懂，我却不怨恨。这样，「人不知」就是「人家不知道我所讲述的」了。这样的解释似乎有些牵强。
+                    </p>
+
+                    <p>总之，本章提出以学习为乐事，做到人不知而不愠，反映出孔子学而不厌、诲人不倦、注重修养、严格要求自己的主张。这些思想主张在《论语》书中多处可见，有助于对第一章内容的深入了解。</p>
+
+                    <h3 id="section2-2">例2：英文排版</h3>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it to make a
+                        type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting, remaining
+                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum
+                        passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem
+                        Ipsum.</p>
+                    <blockquote>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </blockquote>
+
+                    <h4>The standard Lorem Ipsum passage, used since the 1500s</h4>
+
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+
+                    <h4>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h4>
+
+                    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo. Nemo enim ipsam
+                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+                        eos qui ratione
+                        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                        consectetur, adipisci
+                        velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                        quaerat voluptatem. Ut enim
+                        ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                        aliquid ex ea commodi
+                        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                        molestiae consequatur,
+                        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+
+                    <h4>List style in action</h4>
+                    <ul>
+                        <li>If you wish to succeed, you should use persistence as your good friend, experience as your
+                            reference, prudence as
+                            your brother and hope as your sentry.
+                            <p>如果你希望成功，当以恒心为良友，以经验为参谋，以谨慎为兄弟，以希望为哨兵。</p>
+                        </li>
+                        <li>Sometimes one pays most for the things one gets for nothing.
+                            <p>有时候一个人为不花钱得到的东西付出的代价最高。</p>
+                        </li>
+                        <li>Only those who have the patience to do simple things perfectly ever acquire the skill to do
+                            difficult things
+                            easily.
+                            <p>只有有耐心圆满完成简单工作的人，才能够轻而易举的完成困难的事。</p>
+                        </li>
+                    </ul>
+
+                    <h4>You may want to create a perfect <code>&lt;hr /&gt;</code> line, despite the fact that there
+                        will never have one
+                    </h4>
+                    <hr />
+                    <p><abbr title="法国作家罗切福考尔德">La Racheforcauld</abbr> said:
+                        <mark>"Few things are impossible in themselves; and it is often for want of will, rather than of
+                            means, that man fails
+                            to succeed".
+                        </mark>
+                        You just need to follow the browser's behavior, and set a right <code>margin</code> to it。it
+                        will works nice as the
+                        demo you're watching now. The following code is the best way to render typo in Chinese:
+                    </p>
+                    <pre><code class="language-css">
+/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+h1,h2,h3,h4,h5,h6 {
+    line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
+}
+h1{font-size:1.8em;}
+h2{font-size:1.6em;}
+h3{font-size:1.4em;}
+h4{font-size:1.2em;}
+h5,h6{font-size:1em;}
+
+/* 现代排版：保证块/段落之间的空白隔行 */
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr {
+    margin:1em 0 0.6em;
+}
+</code>
+</pre>
+
+                    <h3 id="section3">三、附录</h3>
+
+                    <h5 id="appendix1">1、<i class="serif">Typo.css</i> 排版偏重点</h5>
+                    <table class="ui table" summary="Typo.css 排版偏重点">
+                        <thead>
+                            <tr>
+                                <th>类型</th>
+                                <th>语义</th>
+                                <th>标签</th>
+                                <th>注意点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="15">基础标签</th>
+                                <td>标题</td>
+                                <td><code>h1</code> ～ <code>h6</code></td>
+                                <td>全局不强制大小，<code>.typo</code> 中标题与其对应的内容应紧贴，并且有相应的大小设置</td>
+                            </tr>
+                            <tr>
+                                <td>上、下标</td>
+                                <td><code>sup</code>/<code>sub</code></td>
+                                <td>保持与 MicroSoft Office Word 等程序的日常排版一致</td>
+                            </tr>
+                            <tr>
+                                <td>引用</td>
+                                <td><code>blockquote</code></td>
+                                <td>显示/嵌套样式</td>
+                            </tr>
+                            <tr>
+                                <td>缩写</td>
+                                <td><code>abbr</code></td>
+                                <td>是否都有下划线，鼠标 <code>hover</code> 是否为帮助手势</td>
+                            </tr>
+                            <tr>
+                                <td>分割线</td>
+                                <td><code>hr</code></td>
+                                <td>显示的 <code>padding</code> 和 <code>margin</code>正确</td>
+                            </tr>
+                            <tr>
+                                <td>列表</td>
+                                <td><code>ul</code>/<code>ol</code>/<code>dl</code></td>
+                                <td>在全局没有 <code>list-style</code>，在 .<code>typo</code> 中对齐正确</td>
+                            </tr>
+                            <tr>
+                                <td>定义列表</td>
+                                <td><code>dl</code></td>
+                                <td>全局 <code>padding</code> 和 <code>margin</code>为0， .<code>typo</code> 中对齐正确</td>
+                            </tr>
+                            <tr>
+                                <td>选项</td>
+                                <td><code>input[type=radio[, checkbox]]</code></td>
+                                <td>与其他 <code>form</code> 元素排版时是否居中</td>
+                            </tr>
+                            <tr>
+                                <td>斜体</td>
+                                <td><code>i</code></td>
+                                <td>只设置一种斜体，让 <code>em</code> 和 <code>cite</code> 显示为正体</td>
+                            </tr>
+                            <tr>
+                                <td>强调</td>
+                                <td><code>em</code></td>
+                                <td>在全局显示正体，在 <code>.typo</code> 中显示与 <code>b</code> 和 <code>strong</code> 的样式一致，为粗体
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>加强</td>
+                                <td><code>strong/b</code></td>
+                                <td>显示为粗体</td>
+                            </tr>
+                            <tr>
+                                <td>标记</td>
+                                <td><code>mark</code></td>
+                                <td>类似荧光笔</td>
+                            </tr>
+                            <tr>
+                                <td>印刷</td>
+                                <td><code>small</code></td>
+                                <td>保持为正确字体的 80% 大小，颜色设置为浅灰色</td>
+                            </tr>
+                            <tr>
+                                <td>表格</td>
+                                <td><code>table</code></td>
+                                <td>全局不显示线条，在 <code>table</code> 中显示表格外框，并且表头有浅灰背景</td>
+                            </tr>
+                            <tr>
+                                <td>代码</td>
+                                <td><code>pre</code>/<code>code</code></td>
+                                <td>字体使用 <code>courier</code> 系字体，保持与 <code>serif</code> 有比较一致的显示效果</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="5">特殊符号</th>
+                                <td>着重号</td>
+                                <td><em class="typo-em">在文字下加点</em></td>
+                                <td>在支持 <code>:after</code> 和 <code>:before</code> 的浏览器可以做渐进增强实现</td>
+                            </tr>
+                            <tr>
+                                <td>专名号</td>
+                                <td><u>林建锋</u></td>
+                                <td>专名号，有下划线，使用 <code>u</code> 或都 <code>.typo-u</code> 类</td>
+                            </tr>
+                            <tr>
+                                <td>破折号</td>
+                                <td>——</td>
+                                <td>保持一划，而非两划</td>
+                            </tr>
+                            <tr>
+                                <td>人民币</td>
+                                <td>&yen;</td>
+                                <td>使用两平等线的符号，或者 HTML 实体符号 <code>&amp;yen;</code></td>
+                            </tr>
+                            <tr>
+                                <td>删除符</td>
+                                <td>
+                                    <del>已删除（deleted）</del>
+                                </td>
+                                <td>一致化各浏览器显示，中英混排正确</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="3">加强类</th>
+                                <td>专名号</td>
+                                <td><code>.typo-u</code></td>
+                                <td>由于 <code>u</code> 被 HTML4 放弃，在向后兼容上推荐使用 <code>.typo-u</code></td>
+                            </tr>
+                            <tr>
+                                <td>着重符</td>
+                                <td><code>.typo-em</code></td>
+                                <td>利用 <code>:after</code> 和 <code>:before</code> 实现着重符</td>
+                            </tr>
+                            <tr>
+                                <td>清除浮动</td>
+                                <td><code>.clearfix</code></td>
+                                <td>与一般 CSS Reset 保持一对致 API</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="5">注意点</th>
+                                <td colspan="3">（1）中英文混排行高/行距</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">（2）上下标在 IE 中显示效果</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">（3）块/段落分割空白是否符合设计原则</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">（4）input 多余空间问题</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">（5）默认字体色彩，目前采用 <code>#333</code> 在各种浏览显示比较好</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 id="appendix2">2、开源许可</h5>
                 </div>
             </div>
             <div class="ui attached positive message">
@@ -363,7 +636,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+    <script src="./static/lib/prism/prism.js"></script>
     <script>
         $('.menu.toggle').click(function () {
             $('.m-item').toggleClass('m-mobile-hide')
