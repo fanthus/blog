@@ -12,10 +12,13 @@
 </head>
 <body>
     <%
+        //从 request 中获取数据
         Integer num = (Integer) request.getAttribute("number");
         System.out.print("forword to"+num);
         String val = num.toString();
         out.write(val);
+        request.getParameter("");
+        request.getParameterValues("");
     %>
 </body>
 </html>

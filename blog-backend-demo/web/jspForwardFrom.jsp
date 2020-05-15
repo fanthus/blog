@@ -17,8 +17,12 @@
         Integer tid = Integer.parseInt(id);
         tid = tid + 1;
         System.out.print(tid);
+        //将数据存储到 request 中
         request.setAttribute("number",tid);
-        request.getRequestDispatcher("jspForwardTo.jsp").forward(request,response);
+        //获取请求派发到的目的地
+        RequestDispatcher dispacher = request.getRequestDispatcher("jspForwardTo.jsp");
+        //将请求转发到目的地
+        dispacher.forward(request,response);
     %>
 </body>
 </html>
