@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<!--    <bean id="student" class="com.fanthus.entity.Student">-->
+<!--        <property name="id" value="1"></property>-->
+<!--        <property name="name" value="张三"></property>-->
+<!--        <property name="age" value="22"></property>-->
+<!--        <property name="addresses" >-->
+<!--            <list>-->
+<!--                <ref bean="address"></ref>-->
+<!--                <ref bean="address2"></ref>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="stu" class="com.fanthus.entity.Student" parent="student">-->
+<!--    </bean>-->
+<!--    <bean id="student3" class="com.fanthus.entity.Student">-->
+<!--        <constructor-arg name="id" value="3"></constructor-arg>-->
+<!--        <constructor-arg name="name" value="小明"></constructor-arg>-->
+<!--        <constructor-arg name="age" value="21"></constructor-arg>-->
+<!--        <constructor-arg name="address" ref="address"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="address" class="com.fanthus.entity.Address">-->
+<!--        <property name="id" value="1"></property>-->
+<!--        <property name="name" value="科技路"></property>-->
+<!--    </bean>-->
+<!--    <bean id="address2" class="com.fanthus.entity.Address">-->
+<!--        <property name="id" value="1"></property>-->
+<!--        <property name="name" value="高新区"></property>-->
+<!--    </bean>-->
+
+
+
+</beans>
